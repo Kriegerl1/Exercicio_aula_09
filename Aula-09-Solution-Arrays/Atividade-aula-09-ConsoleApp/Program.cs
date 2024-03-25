@@ -35,13 +35,21 @@ namespace Atividade_aula_09_ConsoleApp
             Console.WriteLine("Exercícios arrays ala 09 | Academia de Programação 2024!\n");
 
 
-            int[] numeros = ordenadorDeArray();
-            menorValor(numeros);
-            topTresMaioresValores(numeros);
-            valoresNegativos(numeros);
-            calculoDeMedia(numeros);
-            removeValor(ref numeros);
+            int[] numerosJaOrdenados = ordenadorDeArray(); //Valor da minha ARRAY; int[] meuPau = {-6, -5, -2, 0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10, 11, };
 
+            Console.WriteLine($"O numero de posições da minha ARRAY é: {numerosJaOrdenados.Length}");
+
+            menorValor(ordenadorDeArray());
+
+            topTresMaioresValores(ordenadorDeArray());
+
+            valoresNegativos(numerosJaOrdenados);
+
+            calculoDeMedia(numerosJaOrdenados);
+
+            //removeValor(ref numeros);
+
+            maiorValor(numerosJaOrdenados);
 
             //    int[] numerosAula = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
@@ -91,12 +99,13 @@ namespace Atividade_aula_09_ConsoleApp
         {
             Console.WriteLine();
             Console.WriteLine();
-            Console.Write("Os valores negativos são: ");
+            Console.Write("Os valores negativos são: \n");
             for (int i = 0; i < numeros.Length; i++)
             {
                 if (numeros[i] < 0)
                 {
-                    Console.Write($"{numeros[i]}, ");
+                    Console.Write($"A posição [{i}] tem o valor:  ");
+                    Console.Write($"{numeros[i]}, \n");
                 }
             }
 
@@ -106,10 +115,10 @@ namespace Atividade_aula_09_ConsoleApp
         {
             Console.WriteLine();
             Console.WriteLine();
-            Console.Write("O maior valor do Array é: ");
+            Console.Write("O maior valor do Array é: \n");
             for (int j = numeros.Length - 3; j < numeros.Length; j++)
             {
-                Console.Write($"{numeros[j]}, ");
+                Console.Write($"{numeros[j]}\n");
             }
 
         }
@@ -121,30 +130,38 @@ namespace Atividade_aula_09_ConsoleApp
             Console.WriteLine($"O menor valor do Array é: {numeros[0]}");
         }
 
+        static void maiorValor(int[] maiorNumero)
+        {
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine($"O mair valor do Array é: {maiorNumero[17]}");
+        }
+
         static int[] ordenadorDeArray()
         {
-            int[] numeros = { -5, 3, 4, 5, 9, 6, 10, -2, 11, 1, 2, 6, 7, 8, 0, -6 };
+            int[] arrayDesordenado = { -5, 3, 4, 5, 9, 6, 10, -2, 11, 1, 2,-20, 6, 7, 8, 0,999, -6 };
 
-            Array.Sort(numeros);
+            Array.Sort(arrayDesordenado);
 
 
             Console.Write("Os Itens do array ordenados são: \n");
 
-            for (int i = 0; i < numeros.Length; i++)
+            for (int i = 0; i < arrayDesordenado.Length; i++)
             {
-                if (numeros[i] != numeros.Length)
+                if (arrayDesordenado[i] != arrayDesordenado.Length)
                 {
-                    Console.Write($"Posição [{i}], valor[");
-                    Console.Write($"{numeros[i]}], \n");
+                    //Console.Write($"Posição [{i}], valor[");
+                    Console.Write($"{arrayDesordenado[i]}, ");
 
                 }
                 else
                 {
-                    Console.Write($"{numeros[i]}");
+                    Console.Write($"{arrayDesordenado[i]}");
                 }
             }
 
-            return numeros;
+            return arrayDesordenado;
 
         }
     }

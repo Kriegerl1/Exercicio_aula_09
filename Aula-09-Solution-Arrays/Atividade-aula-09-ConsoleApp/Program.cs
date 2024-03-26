@@ -35,21 +35,21 @@ namespace Atividade_aula_09_ConsoleApp
             Console.WriteLine("Exercícios arrays ala 09 | Academia de Programação 2024!\n");
 
 
-            int[] numerosJaOrdenados = ordenadorDeArray(); //Valor da minha ARRAY; int[] meuPau = {-6, -5, -2, 0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10, 11, };
+            int[] numerosJaOrdenados = ordenadorDeArray(); //Valor da minha ARRAY; int[] foiMalONome = {-6, -5, -2, 0, 1, 2, 3, 4, 5, 6, 6, 7, 8, 9, 10, 11, };
 
-            Console.WriteLine($"O numero de posições da minha ARRAY é: {numerosJaOrdenados.Length}");
+            Console.WriteLine($"\n\nO numero de posições da minha ARRAY é: {numerosJaOrdenados.Length}");
 
-            menorValor(ordenadorDeArray());
+            maiorValor(numerosJaOrdenados);
 
-            topTresMaioresValores(ordenadorDeArray());
-
-            valoresNegativos(numerosJaOrdenados);
+            menorValor(numerosJaOrdenados);
 
             calculoDeMedia(numerosJaOrdenados);
 
-            //removeValor(ref numeros);
+            topTresMaioresValores(numerosJaOrdenados);
 
-            maiorValor(numerosJaOrdenados);
+            valoresNegativos(numerosJaOrdenados);
+
+            removeValor(numerosJaOrdenados);
 
             //    int[] numerosAula = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
@@ -65,17 +65,6 @@ namespace Atividade_aula_09_ConsoleApp
 
         }
 
-
-        static void removeValor(ref int[] numeros)
-        {
-            int[] numerosCopy = { };
-            Array.Copy(numeros, numerosCopy, numeros.Length);
-            Console.WriteLine(numerosCopy.ToString());
-            for (int i = 0; i < numeros.Length; i++)
-            {
-                Console.Write($"O Array copiado é: {numeros[i].ToString()}\nO copia do array: {numerosCopy[i].ToString()}\n\n");
-            }
-        }
         static void calculoDeMedia(int[] numeros)
         {
             Console.WriteLine();
@@ -85,9 +74,7 @@ namespace Atividade_aula_09_ConsoleApp
             int soma = 0;
 
             foreach (int numero in numeros)
-            {
                 soma += numero;
-            }
 
             Console.WriteLine(soma);
             double media = soma / numeros.Length;
@@ -99,13 +86,13 @@ namespace Atividade_aula_09_ConsoleApp
         {
             Console.WriteLine();
             Console.WriteLine();
-            Console.Write("Os valores negativos são: \n");
+            Console.Write("Os valores negativos são: ");
             for (int i = 0; i < numeros.Length; i++)
             {
                 if (numeros[i] < 0)
                 {
-                    Console.Write($"A posição [{i}] tem o valor:  ");
-                    Console.Write($"{numeros[i]}, \n");
+                    //Console.Write($"A posição [{i}] tem o valor:  ");
+                    Console.Write($"{numeros[i]} ");
                 }
             }
 
@@ -115,11 +102,9 @@ namespace Atividade_aula_09_ConsoleApp
         {
             Console.WriteLine();
             Console.WriteLine();
-            Console.Write("O maior valor do Array é: \n");
+            Console.Write("O maior valor do Array é: ");
             for (int j = numeros.Length - 3; j < numeros.Length; j++)
-            {
-                Console.Write($"{numeros[j]}\n");
-            }
+                Console.Write($"{numeros[j]} ");
 
         }
 
@@ -135,17 +120,17 @@ namespace Atividade_aula_09_ConsoleApp
 
             Console.WriteLine();
             Console.WriteLine();
-            Console.WriteLine($"O mair valor do Array é: {maiorNumero[17]}");
+            Console.WriteLine($"O mair valor do Array é: {maiorNumero[15]}");
         }
 
         static int[] ordenadorDeArray()
         {
-            int[] arrayDesordenado = { -5, 3, 4, 5, 9, 6, 10, -2, 11, 1, 2,-20, 6, 7, 8, 0,999, -6 };
+            int[] arrayDesordenado = { -5, 3, 4, 5, 9, 6, 10, -2, 11, 1, 2, 6, 7, 8, 0, -6 };
 
             Array.Sort(arrayDesordenado);
 
 
-            Console.Write("Os Itens do array ordenados são: \n");
+            Console.Write("Os Itens do array ordenados são: ");
 
             for (int i = 0; i < arrayDesordenado.Length; i++)
             {
@@ -153,7 +138,6 @@ namespace Atividade_aula_09_ConsoleApp
                 {
                     //Console.Write($"Posição [{i}], valor[");
                     Console.Write($"{arrayDesordenado[i]}, ");
-
                 }
                 else
                 {
@@ -164,7 +148,53 @@ namespace Atividade_aula_09_ConsoleApp
             return arrayDesordenado;
 
         }
+
+        static void removeValor(int[] numeros)
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Console.WriteLine("Digite o valor que deseja remover do Array.\n");
+            Console.Write($"Valores disponíveis: \n");
+
+            for (int i = 0; i < numeros.Length; i++)
+                Console.Write($"Posição [ {i} ] Valor {numeros[i]}\n");
+
+            int inputRemovedor = obterValor("\nDigite o valor que será removido: ");
+            do
+            {
+                for (int i = 0; i < numeros.Length; i++)
+                {
+                    if (inputRemovedor == numeros[i])
+                    {
+                        numeros[i] -= inputRemovedor + 999;
+                        Console.WriteLine();
+                        Console.Write("Array atualizado: \n");
+                        for (int j = 0; j < numeros.Length; j++)
+                        {
+                            if (numeros[j] != -999)
+                                Console.Write($"Posição [{j}] Valor {numeros[j]}\n");
+
+                            if (numeros[j] == -999)
+                                Console.WriteLine($"O index [{j}] foi removido!");
+                        }
+                    }
+                }
+                Console.WriteLine("\n\nPara finalizar a operação aperte ENTER!");
+                inputRemovedor = obterValor("\nDigite o valor que será removido: ");
+            } while (inputRemovedor != null);
+
+
+        }
+
+        static int obterValor(string texto)
+        {
+            Console.WriteLine(texto);
+
+            int input = Convert.ToInt32(Console.ReadLine());
+
+            return input;
+        }
     }
 }
 
-//Está bagunçado por que estou explicando o conteúdo

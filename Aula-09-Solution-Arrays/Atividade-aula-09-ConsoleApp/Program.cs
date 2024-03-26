@@ -167,15 +167,14 @@ namespace Atividade_aula_09_ConsoleApp
                 {
                     if (inputRemovedor == numeros[i])
                     {
-                        numeros[i] -= inputRemovedor + 999;
+                        numeros[i] = -1; 
                         Console.WriteLine();
                         Console.Write("Array atualizado: \n");
                         for (int j = 0; j < numeros.Length; j++)
                         {
-                            if (numeros[j] != -999)
+                            if (numeros[j] != -1)
                                 Console.Write($"Posição [{j}] Valor {numeros[j]}\n");
-
-                            if (numeros[j] == -999)
+                            else
                                 Console.WriteLine($"O index [{j}] foi removido!");
                         }
                     }

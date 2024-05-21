@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jogo-AdivinhacaoConsoleApp", "Jogo-AdivinhacaoConsoleApp\Jogo-AdivinhacaoConsoleApp.csproj", "{70358114-77FF-4815-B8CC-0A626ECD70CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aula-21-O.Objetos-ConsoleApp", "Aula-21-O.Objetos-ConsoleApp\Aula-21-O.Objetos-ConsoleApp.csproj", "{B6BC5B57-A690-40C5-9180-998A14265CFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{70358114-77FF-4815-B8CC-0A626ECD70CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70358114-77FF-4815-B8CC-0A626ECD70CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70358114-77FF-4815-B8CC-0A626ECD70CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70358114-77FF-4815-B8CC-0A626ECD70CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6BC5B57-A690-40C5-9180-998A14265CFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6BC5B57-A690-40C5-9180-998A14265CFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6BC5B57-A690-40C5-9180-998A14265CFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6BC5B57-A690-40C5-9180-998A14265CFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D2EA85A9-4C1C-4D9E-95B7-E2A8582BE471}
+		SolutionGuid = {BD6AE0E4-B7EC-45C6-96E1-020E5B402F1B}
 	EndGlobalSection
 EndGlobal
